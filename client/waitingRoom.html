@@ -1,0 +1,21 @@
+<template name="home">
+    <h1>Welcome to AW</h1>
+
+    {{> waitingRoom}}
+</template>
+
+<template name="waitingRoom">
+  <h2>Waiting Room</h2>
+ {{> loginButtons}}
+
+<p>Click on a user to invite to a new game</p>
+  <ol>
+    {{#each onlineUsers}}
+    <li class="inviteUser">{{_id}}</li>
+    {{/each}}
+  </ol>
+
+  {{#each invites}}
+  <h4>{{you}} invited you to a game click <a href="/room/{{room}}">here</a></h4>
+  {{/each}}
+</template>

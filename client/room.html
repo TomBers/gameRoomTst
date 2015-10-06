@@ -1,0 +1,13 @@
+<template name="room">
+
+  <!-- {{> loginButtons}} -->
+
+<ol>
+  {{#each onlineUsers}}
+  <li class="inviteUser">{{_id}}</li>
+  {{/each}}
+</ol>
+  <h1>Room {{_id}},{{rnd}}</h1>
+  <button>Change State</button>
+
+</template>

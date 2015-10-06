@@ -13,11 +13,10 @@ Router.map(function() {
     path: '/room/:_id',
     template: 'room',
     waitOn: function(){
-      Meteor.subscribe('userStatus',this.params._id);
       return Meteor.subscribe('Rooms',this.params._id);
     },
     data: function() {
-      return Rooms.findOne({name:this.params._id});
+      return Rooms.findOne({_id:this.params._id});
     }
   });
 });
